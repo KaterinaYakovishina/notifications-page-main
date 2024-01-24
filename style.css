@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    display: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Plus Jakarta Sans';
+    display: grid;
+    place-items: center;
+    background-color: var(--nt-lt-blue0);
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+:root {
+    --pr-red: hsl(1, 90%, 64%);
+    --pr-blue: hsl(219, 85%, 26%);
+    --nt-white: hsl(0, 0%, 100%);
+    --nt-lt-blue1: hsl(211, 68%, 94%);
+    --nt-lt-blue2: hsl(205, 33%, 90%);
+    --nt-lt-blue0: hsl(210, 60%, 98%);
+    --nt-dr-blue0: hsl(219, 14%, 63%);
+    --nt-dr-blue1: hsl(219, 12%, 42%);
+    --nt-dr-blue3: hsl(224, 21%, 14%);
+}
+
+main {
+    max-width: 50%;
+    padding: 2rem;
+    background-color: var(--nt-white);
+    border-radius: 1rem;
+    box-shadow: -1px 1px 3px 1px var(--nt-lt-blue1);
+}
+
+hgroup {
+    display: flex;
+    align-items: first baseline;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    flex: 2;
+}
+
+.name,
+.ref {
+    font-weight: 800;
+}
+
+img {
+    height: 40px;
+    width: 40px;
+}
+
+article {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    margin-block: 0.25rem;
+}
+
+.picture {
+    display: flex;
+    flex: 2;
+    place-content: flex-end;
+}
+
+#active:after {
+    content: "";
+    display: inline-block;
+    height: 0.5rem;
+    width: 0.5rem;
+    background-color: red;
+    border-radius: 50%;
+    margin-left: 0.25rem;
+}
+
+/* ----styling---- */
+p {
+    color: var(--nt-dr-blue1);
+}
+
+.count {
+    background-color: var(--pr-blue);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    margin-inline: 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 16px;
+}
+
+article:has(#active) {
+    background-color: var(--nt-lt-blue0);
+    border-radius: 0.75rem;
+}
+
+.notifications>* {
+    line-height: 1.25;
+}
+
+.ref {
+    color: var(--nt-dr-blue1);
+}
+
+.date {
+    color: var(--nt-dr-blue0);
+}
+
+.name {
+    color: var(--nt-dr-blue3);
+}
+
+.name:hover,
+.ref:hover,
+.read-all:hover {
+    cursor: pointer;
+    color: var(--pr-blue);
+}
+
+.message:hover {
+    background-color: var(--nt-lt-blue2);
+    cursor: pointer;
+}
+
+.picture img:hover {
+    cursor: pointer;
+}
+
+#btn {
+    display: none;
+}
+
+.message {
+    border: 1px solid var(--nt-lt-blue2);
+    padding: 1.25rem;
+    margin-block: 1rem;
+    display: none;
+}
+
+/* ------------------------------- */
+
+@media screen and (max-width: 750px) {
+    main {
+        max-width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    body {
+        place-items: unset;
+    }
+
+    main {
+        max-width: 100%;
+        border-radius: unset;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: larger;
+    }
+}
